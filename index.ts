@@ -50,7 +50,7 @@ import { setTimeout } from 'node:timers/promises';
     // } catch (err) { /* if not found, ignore */ }
 
     // Helper function to scroll & scrape "followers" or "following"
-    const scrapeList = async (listType) => {
+    const scrapeList = async (listType: 'followers' | 'following') => {
       // Navigate to /followers or /following
       const url = `https://www.instagram.com/${TARGET_USERNAME}/${listType}`;
       console.log(`Navigating to: ${url}`);
