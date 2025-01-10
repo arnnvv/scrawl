@@ -1,17 +1,17 @@
 {
-  "name": "scrape",
+  "name": "scrawl",
   "module": "index.ts",
-  "dependencies": {
-    "puppeteer": "^24.0.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
+  "type": "module",
   "scripts": {
     "d": "bun index.ts"
   },
-  "type": "module",
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  },
   "devDependencies": {
     "@types/bun": "^1.1.16"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
