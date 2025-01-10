@@ -1,0 +1,17 @@
+{
+  "name": "scrape",
+  "module": "index.ts",
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "d": "bun index.ts"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "^1.1.16"
+  }
+}
