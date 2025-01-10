@@ -24,7 +24,6 @@ async function scrapeList(
   listType: "followers" | "following"
 ): Promise<string[]> {
   const url = `https://www.instagram.com/${targetUsername}/${listType}`;
-  console.log(`Navigating to: ${url}`);
 
   await page.goto(url, { waitUntil: "networkidle2" });
 
@@ -162,9 +161,6 @@ serve({
       const followers: string[] = await scrapeList(page, TARGET_USERNAME, "followers");
       const following: string[] = await scrapeList(page, TARGET_USERNAME, "following");
 
-      console.log("followers:", followers);
-      console.log("following:", following);
-
       // 7) Determine: "Followers not in Following"
       // i.e. who is in followers but NOT in following
       const followersSet = new Set(followers);
@@ -183,7 +179,6 @@ serve({
         headers: { "Content-Type": "application/json" },
       });
     } catch (err) {
-      console.error("Error scraping:", err);
       return new Response(JSON.stringify({ error: String(err) }), {
         status: 500,
         headers: { "Content-Type": "application/json" },
